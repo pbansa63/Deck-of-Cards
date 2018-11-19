@@ -1,0 +1,22 @@
+<!-- <h2 mat-dialog-title>Login Here</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="container">
+        <form (ngSubmit)='loginUser()' [formGroup]='loginForm' novalidate class="form-group">
+            <input formControlName='email' type="text" class="form-control" placeholder="Enter Email" />
+            <div class="alert " *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched">
+                Email is required
+            </div>
+            <br/>
+            <input formControlName='password' type="password" class="form-control" placeholder="Enter Password">
+            <div class="alert" *ngIf="!loginForm.get('password').valid && loginForm.get('email').touched">
+Password is required and should less than 10 characters
+            </div>
+            <button mat-button [disabled]='loginForm.invalid' class="">Login</button>
+        </form>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions> -->

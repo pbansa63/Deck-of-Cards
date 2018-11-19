@@ -1,0 +1,11 @@
+mat-grid-tile {
+    background:white;
+  }
+
+  .imgSize{
+    width: 100%;
+    
+  }
+  .imgSize:hover{
+    transform: scale(1.5);
+  }

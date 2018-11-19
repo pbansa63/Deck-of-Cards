@@ -1,0 +1,67 @@
+<style>
+    select {
+        position: relative;
+    }
+
+    .blueText {
+        color: #0000FF;
+    }
+
+</style>
+
+<div class="row col-sm-12" style="display:flex;flex-direction: row;justify-content: center;align-content: center">
+        <div class="col-sm-5">
+            <div class="col-sm-12 col-lg-offset-1">
+    <h2>Deck of Cards</h2>
+            </div>
+            <div class="col-sm-12" cdkDropList [cdkDropListData]="cards" (cdkDropListDropped)="drop($event)"
+                [cdkDropListConnectedTo]="otherList" #firstList="cdkDropList">
+                <div cdkDrag class="col-sm-1 itemClass " *ngFor="let item of cards">
+                    <img width=50 height=100 src={{item.image}} alt="card image">
+                </div>
+            </div>
+        </div>  
+    
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+                <div class="col-sm-12">
+                        <h2>Selected Cards</h2>
+               </div>
+            <div class="col-sm-12" cdkDropList [cdkDropListData]="otherCards" (cdkDropListDropped)="drop($event)"
+                [cdkDropListConnectedTo]="firstList" #otherList="cdkDropList">
+                <div cdkDrag class="col-sm-1 itemClass " *ngFor="let item of otherCards">
+                    <img width="90" height="100" src={{item.image}} alt="card image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-12" style="margin-top:1%">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+            <button class="btn btn-success" (click)="shuffleImage()">Shuffle</button>
+        </div>
+        <div class="col-sm-5">
+            <div class="col-lg-12">
+                <div class="form-group col-lg-5">
+                    <label for="exampleFormControlSelect1">Select Card Type</label>
+                    <select class="form-control " id="exampleFormControlSelect1" [(ngModel)]="selectedCategory" id="category"
+                        (ngModelChange)="onChange($event)">
+                        <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-2" *ngIf="showSortByRankButton">
+                    <label></label>
+                    <button class="btn btn-primary" (click)="sortByRank()">Sort By Rank</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+<div class="col-lg-12 ">
+    <div class="col-lg-6 container ">
+            <select class=" btn btn-primary"  [(ngModel)]="selectedCategory" id="category" (ngModelChange)="onChange($event)" >                    
+                    <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+            </select>
+    </div>        
+</div> -->

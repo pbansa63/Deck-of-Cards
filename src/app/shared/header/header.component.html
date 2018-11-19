@@ -1,0 +1,26 @@
+<mat-toolbar class="app-heading">
+    <div class="container-logo">
+        <img class="travel-logo" src="../../../assets/img/TravelLogo.png" />
+    </div><span class="title">{{ title }}</span>
+
+    <div class="user-profile">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">User</button>
+
+        <div id="myModal" class="modal fade" role="dialog" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Create User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <register-content></register-content>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
